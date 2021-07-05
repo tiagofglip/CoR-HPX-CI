@@ -8,4 +8,5 @@ RUN wget https://github.com/STEllAR-GROUP/hpx/archive/1.6.0.zip && unzip 1.6.0.z
 RUN apt-get update -y && apt-get install libssh-dev -y
 RUN wget https://github.com/tiagofglip/CoR-HPX/archive/refs/heads/main.zip && unzip main.zip && cd CoR-HPX-main && mkdir build && cd build && \
     cmake .. && make -j2 install
+RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 CMD ["/bin/bash"]
